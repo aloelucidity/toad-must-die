@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BANK_00_INSTR_0023_SND_0000.mp3-cd82d08cd1b3957267605c9b6ab47849.mp3str"
+
+[deps]
+
+source_file="res://BANK_00_INSTR_0023_SND_0000.mp3"
+dest_files=[ "res://.import/BANK_00_INSTR_0023_SND_0000.mp3-cd82d08cd1b3957267605c9b6ab47849.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

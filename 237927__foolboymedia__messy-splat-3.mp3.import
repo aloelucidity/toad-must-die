@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/237927__foolboymedia__messy-splat-3.mp3-6406bbd918999571624f4facb789cadc.mp3str"
+
+[deps]
+
+source_file="res://237927__foolboymedia__messy-splat-3.mp3"
+dest_files=[ "res://.import/237927__foolboymedia__messy-splat-3.mp3-6406bbd918999571624f4facb789cadc.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

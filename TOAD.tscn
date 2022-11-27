@@ -1,0 +1,291 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://toad.gd" type="Script" id=1]
+[ext_resource path="res://toad.png" type="Texture" id=2]
+[ext_resource path="res://toadbody.png" type="Texture" id=3]
+[ext_resource path="res://circle.png" type="Texture" id=4]
+[ext_resource path="res://toadhead.png" type="Texture" id=5]
+[ext_resource path="res://237927__foolboymedia__messy-splat-3.mp3" type="AudioStream" id=6]
+[ext_resource path="res://randsound.gd" type="Script" id=7]
+[ext_resource path="res://BANK_00_INSTR_0023_SND_0000.mp3" type="AudioStream" id=8]
+[ext_resource path="res://BANK_00_INSTR_0024_SND_0000.mp3" type="AudioStream" id=9]
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 17, 32 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 2 )
+region = Rect2( 17, 0, 17, 32 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 0, 17, 32 )
+
+[sub_resource type="SpriteFrames" id=61]
+animations = [ {
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=62]
+extents = Vector2( 8, 13.5 )
+
+[sub_resource type="Animation" id=65]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("death:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("death/BLOODDD:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "die"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("death:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("death/BLOODDD:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("death/Head:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("SPLAT")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("scream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_random"
+} ]
+}
+
+[sub_resource type="ParticlesMaterial" id=63]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 28.96
+gravity = Vector3( 0, 200, 0 )
+initial_velocity = 108.91
+angular_velocity = 99.8
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.0
+scale_random = 0.12
+color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="ParticlesMaterial" id=64]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 39.21
+gravity = Vector3( 0, 262, 0 )
+initial_velocity = 108.9
+angular_velocity = 356.44
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[sub_resource type="RectangleShape2D" id=67]
+extents = Vector2( 12, 18 )
+
+[node name="Toad" type="KinematicBody2D"]
+position = Vector2( -243, -95 )
+collision_layer = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+gravity = 14.0
+speed = 200.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 61 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 2.5 )
+shape = SubResource( 62 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( -12, 0 )
+enabled = true
+cast_to = Vector2( 0, 24 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 65 )
+anims/die = SubResource( 66 )
+
+[node name="death" type="Node2D" parent="."]
+visible = false
+position = Vector2( 0.5, 0.5 )
+
+[node name="BLOODDD" type="Particles2D" parent="death"]
+position = Vector2( 0, 3 )
+emitting = false
+amount = 168
+process_material = SubResource( 63 )
+texture = ExtResource( 4 )
+
+[node name="Body" type="Sprite" parent="death"]
+position = Vector2( 0, 9 )
+texture = ExtResource( 3 )
+
+[node name="Head" type="Particles2D" parent="death"]
+position = Vector2( 0, -4.5 )
+amount = 1
+lifetime = 1.5
+one_shot = true
+local_coords = false
+process_material = SubResource( 64 )
+texture = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0.5, 2.5 )
+shape = SubResource( 67 )
+
+[node name="SPLAT" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
+script = ExtResource( 7 )
+sounds = [ ExtResource( 8 ), ExtResource( 9 ) ]
