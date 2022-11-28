@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/110 World Clear.mp3-d4e835df12b5cd81717c0fb5f31ab887.mp3str"
+
+[deps]
+
+source_file="res://110 World Clear.mp3"
+dest_files=[ "res://.import/110 World Clear.mp3-d4e835df12b5cd81717c0fb5f31ab887.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

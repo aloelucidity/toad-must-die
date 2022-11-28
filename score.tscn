@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://impact.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://353065_SMW_Bonus_HC.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Button.gd" type="Script" id=3]
+[ext_resource path="res://Label.gd" type="Script" id=4]
+
+[sub_resource type="Gradient" id=65]
+colors = PoolColorArray( 0, 0, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=66]
+gradient = SubResource( 65 )
+width = 64
+
+[sub_resource type="DynamicFont" id=58]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=59]
+size = 26
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=61]
+
+[sub_resource type="StyleBoxEmpty" id=62]
+
+[sub_resource type="StyleBoxEmpty" id=63]
+
+[sub_resource type="StyleBoxEmpty" id=64]
+
+[sub_resource type="StyleBoxEmpty" id=60]
+
+[node name="ending" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 360.0
+margin_right = 630.0
+margin_bottom = 360.0
+rect_rotation = 90.0
+texture = SubResource( 66 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 21.0
+margin_right = 355.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 58 )
+text = "awesome!! you got your revenge and killed every toad in 00.00 seconds!! but can you do better?"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 100.0
+margin_top = 158.0
+margin_right = 260.0
+margin_bottom = 215.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.709804, 0.709804, 0.709804, 1 )
+custom_colors/font_color_pressed = Color( 0.403922, 0.403922, 0.403922, 1 )
+custom_fonts/font = SubResource( 59 )
+custom_styles/hover = SubResource( 61 )
+custom_styles/pressed = SubResource( 62 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/disabled = SubResource( 64 )
+custom_styles/normal = SubResource( 60 )
+enabled_focus_mode = 0
+text = "RESTART"
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -6.0
+autoplay = true

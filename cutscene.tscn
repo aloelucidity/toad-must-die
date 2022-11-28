@@ -1,0 +1,457 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://MARIO-angy2.mp3" type="AudioStream" id=1]
+[ext_resource path="res://TOAD.mp3" type="AudioStream" id=2]
+[ext_resource path="res://bowserscastle.png" type="Texture" id=3]
+[ext_resource path="res://MARIO-angy1.mp3" type="AudioStream" id=4]
+[ext_resource path="res://impact.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://266105-marregheriti-shotgun.mp3" type="AudioStream" id=6]
+[ext_resource path="res://BANK_00_INSTR_0024_SND_0000.mp3" type="AudioStream" id=7]
+[ext_resource path="res://tile.png" type="Texture" id=8]
+[ext_resource path="res://cutscene.gd" type="Script" id=9]
+[ext_resource path="res://110 World Clear.mp3" type="AudioStream" id=10]
+[ext_resource path="res://bag.png" type="Texture" id=11]
+[ext_resource path="res://mariointro.png" type="Texture" id=12]
+[ext_resource path="res://toadintro.png" type="Texture" id=13]
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 11 )
+region = Rect2( 48, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 11 )
+region = Rect2( 96, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 11 )
+region = Rect2( 144, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 11 )
+region = Rect2( 192, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 11 )
+region = Rect2( 240, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 11 )
+region = Rect2( 288, 0, 48, 32 )
+
+[sub_resource type="SpriteFrames" id=72]
+animations = [ {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 66 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"loop": false,
+"name": "open",
+"speed": 6.0
+} ]
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 13 )
+region = Rect2( 16, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 13 )
+region = Rect2( 32, 0, 16, 24 )
+
+[sub_resource type="SpriteFrames" id=76]
+animations = [ {
+"frames": [ SubResource( 73 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 74 ) ],
+"loop": true,
+"name": "rofl",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 75 ) ],
+"loop": true,
+"name": "stare",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 12 )
+region = Rect2( 72, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 12 )
+region = Rect2( 24, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 12 )
+region = Rect2( 48, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 12 )
+region = Rect2( 48, 0, 24, 32 )
+
+[sub_resource type="SpriteFrames" id=81]
+animations = [ {
+"frames": [ SubResource( 82 ) ],
+"loop": true,
+"name": "angy",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 77 ), SubResource( 78 ), SubResource( 79 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 80 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=59]
+resource_name = "anim"
+length = 22.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.5,
+"stream": ExtResource( 6 )
+}, {
+"end_offset": 0.8,
+"start_offset": 0.0,
+"stream": ExtResource( 6 )
+} ],
+"times": PoolRealArray( 8.5, 12.9, 16.1, 18.8, 19.8 )
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 19.9 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 8.4, 18.5 ),
+"transitions": PoolRealArray( 0, 1 ),
+"update": 0,
+"values": [ -8.0, 0.0 ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Bag:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 5.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "default", "open" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Toad:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 5.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Toad:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 7.2, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "default", "rofl", "stare" ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Toad:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 5.8, 6.4, 7.2 ),
+"transitions": PoolRealArray( 0, 0.5, 2, 1 ),
+"update": 0,
+"values": [ Vector2( 275, 185 ), Vector2( 275, 161 ), Vector2( 275, 105 ), Vector2( 275, 185 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Mario:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 4.9, 13, 13.2, 13.5, 13.8, 14.2, 14.4, 14.7, 15, 15.3, 15.6, 16.2, 16.4, 16.7, 17, 17.4, 17.6, 17.9, 18.2 ),
+"transitions": PoolRealArray( 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ),
+"update": 0,
+"values": [ Vector2( -32, 180 ), Vector2( 184, 180 ), Vector2( 184, 180 ), Vector2( 184, 180 ), Vector2( 184, 179 ), Vector2( 184, 180 ), Vector2( 184, 178 ), Vector2( 184, 180 ), Vector2( 184, 179 ), Vector2( 184, 180 ), Vector2( 184, 176 ), Vector2( 184, 178 ), Vector2( 184, 178 ), Vector2( 184, 180 ), Vector2( 184, 179 ), Vector2( 184, 180 ), Vector2( 184, 178 ), Vector2( 184, 180 ), Vector2( 184, 179 ), Vector2( 184, 180 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Mario:animation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 4.9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "default", "idle", "angy" ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Camera2D:zoom")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 0, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Camera2D:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 0, 1 ),
+"update": 0,
+"values": [ Vector2( 180, 135 ), Vector2( 186, 165 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("CanvasLayer/ColorRect3:color")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 18, 18.9 ),
+"transitions": PoolRealArray( 1, 2, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Mario/ColorRect:rect_scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 13, 13.2, 13.4, 13.6, 13.8, 14, 14.2, 14.4, 14.6, 14.8, 15, 15.2, 15.4, 16.2, 16.4, 16.6, 16.8, 17, 17.2, 17.4, 17.6, 17.8, 18, 18.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+}
+tracks/14/type = "method"
+tracks/14/path = NodePath(".")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 22.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_game"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=58]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxEmpty" id=60]
+
+[sub_resource type="StyleBoxEmpty" id=61]
+
+[sub_resource type="StyleBoxEmpty" id=62]
+
+[sub_resource type="StyleBoxEmpty" id=63]
+
+[sub_resource type="StyleBoxEmpty" id=64]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Bowserscastle" type="Sprite" parent="."]
+position = Vector2( 203, 138 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 208.0
+margin_right = 180.0
+margin_bottom = 224.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="Bag" type="AnimatedSprite" parent="."]
+position = Vector2( 290, 176 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 72 )
+animation = "open"
+frame = 3
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Toad" type="AnimatedSprite" parent="."]
+position = Vector2( 275, 185 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 76 )
+animation = "stare"
+playing = true
+
+[node name="Mario" type="AnimatedSprite" parent="."]
+position = Vector2( 184, 180 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 81 )
+animation = "angy"
+playing = true
+
+[node name="ColorRect" type="ColorRect" parent="Mario"]
+margin_left = -2.0
+margin_top = -1.2
+margin_right = 1.0
+margin_bottom = 0.8
+rect_scale = Vector2( 1, 1e-05 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -9.087
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/anim = SubResource( 59 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 186, 165 )
+current = true
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 92
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 360.0
+margin_bottom = 33.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+margin_top = 237.0
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 288.0
+margin_top = 237.0
+margin_right = 360.0
+margin_bottom = 270.0
+focus_mode = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.709804, 0.709804, 0.709804, 1 )
+custom_colors/font_color_pressed = Color( 0.403922, 0.403922, 0.403922, 1 )
+custom_fonts/font = SubResource( 58 )
+custom_styles/hover = SubResource( 60 )
+custom_styles/pressed = SubResource( 61 )
+custom_styles/focus = SubResource( 62 )
+custom_styles/disabled = SubResource( 63 )
+custom_styles/normal = SubResource( 64 )
+enabled_focus_mode = 0
+text = "SKIP"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="start_game"]

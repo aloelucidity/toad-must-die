@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MARIO-angy2.mp3-6ebc37fa3dcaf9d7ac11c9cca5647b9b.mp3str"
+
+[deps]
+
+source_file="res://MARIO-angy2.mp3"
+dest_files=[ "res://.import/MARIO-angy2.mp3-6ebc37fa3dcaf9d7ac11c9cca5647b9b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

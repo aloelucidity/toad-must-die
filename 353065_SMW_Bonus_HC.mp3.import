@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/353065_SMW_Bonus_HC.mp3-65f5f63215bd4ae0e3918598b4e446f4.mp3str"
+
+[deps]
+
+source_file="res://353065_SMW_Bonus_HC.mp3"
+dest_files=[ "res://.import/353065_SMW_Bonus_HC.mp3-65f5f63215bd4ae0e3918598b4e446f4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

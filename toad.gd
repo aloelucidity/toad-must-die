@@ -18,6 +18,9 @@ func stop():
 func die():
 	$Area2D.queue_free()
 	get_parent().toads_killed += 1
+	if get_parent().toads == get_parent().toads_killed:
+		scorekeeper.text = get_parent().get_node("%TIME").text
+		get_tree().change_scene("res://score.tscn")
 	$AnimationPlayer.play("die")
 
 func is_grounded():

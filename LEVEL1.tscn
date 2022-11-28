@@ -718,7 +718,8 @@ custom_fonts/font = SubResource( 58 )
 text = "= 0/0"
 script = ExtResource( 8 )
 
-[node name="Label2" type="Label" parent="CanvasLayer2"]
+[node name="TIME" type="Label" parent="CanvasLayer2"]
+unique_name_in_owner = true
 margin_left = 306.0
 margin_top = 12.0
 margin_right = 354.0
